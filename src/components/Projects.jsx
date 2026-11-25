@@ -139,11 +139,13 @@ const projects = [
   {
     number: '02',
     category: 'Freelance',
-    title: 'CLYYORA — Digital Studio',
-    tagline: 'Digital Experiences, Built Better — Freelance Studio Web Platform',
+    title: 'CLYYORA',
+    tagline: 'Digital Experiences, Built Better — Freelance Business Website',
     description:
-      'A high-performance React 19 + Vite SSR and prerendered digital studio platform built for CLYYORA (clyyora.in). Engineered with foundation-first technical SEO, automated XML sitemap generation, JSON-LD structured data, and dynamic case-study pages.',
+      'A high-performance React 19 + Vite SSR and prerendered freelance business website built for CLYYORA (clyyora.in). Engineered with foundation-first technical SEO, automated XML sitemap generation, JSON-LD structured data, and dynamic case-study pages.',
     image: ClyyoraImg,
+    imageContain: true,
+    imageBg: '#0B0B12',
     github: 'https://github.com/Jayakumar044/Clyyora',
     live: 'https://clyyora.in/',
     highlights: [
@@ -265,12 +267,13 @@ function ProjectCard({ project, index, isDark }) {
               className="relative group/img overflow-hidden rounded-xl aspect-[4/3.5] w-full"
               style={{
                 border: `1px solid ${B ? (hovered ? 'rgba(255,255,255,0.25)' : 'rgba(148,163,184,0.2)') : 'rgba(255,255,255,0.1)'}`,
+                ...(project.imageBg ? { background: project.imageBg } : {}),
               }}
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110"
+                className={`w-full h-full ${project.imageContain ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover/img:scale-110`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <span className="text-white text-xs font-bebas tracking-widest">VIEW PREVIEW</span>
