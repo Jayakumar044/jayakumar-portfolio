@@ -5,6 +5,7 @@ import libraryManagementGif from '../assets/images/librarymanagement.gif'
 import ProposalImg from '../assets/images/Proposal.png'
 import LibraryBackendImg from '../assets/images/library_backend.png'
 import SkywayAIImg from '../assets/images/Skyway_AI.png'
+import SellooImg from '../assets/images/selloo.png'
 
 const projects = [
   {
@@ -111,6 +112,27 @@ const projects = [
     accent: '#06b6d4',
     accent2: '#4f8bff',
     tags: ['Next.js', 'TypeScript', 'Gemini AI', 'MongoDB', 'Node.js'],
+  },
+  {
+    number: '01',
+    category: 'Freelance',
+    title: 'Selloo',
+    tagline: 'Unified Hyperlocal C2C Marketplace & B2B Wholesale Mobile App',
+    description:
+      'A production-ready React Native & Expo mobile application unifying hyperlocal C2C classifieds and B2B wholesale industrial trade. Built with Supabase PostgreSQL + PostGIS spatial matching, real-time WebSocket negotiation chat, and a Super Admin control center.',
+    image: SellooImg,
+    live: 'https://expo.dev/accounts/clyyoras-team/projects/marketplace/builds/bb4728db-f9fc-4210-85ae-722bb50ab1f5',
+    liveLabel: 'VIEW BUILD / APK',
+    highlights: [
+      'Dual C2C & B2B marketplace with PostGIS & Haversine hyperlocal distance matching',
+      'Real-time 1-to-1 negotiation chat, price offers & counter-offers via Supabase Realtime',
+      'Wholesale B2B supplier KYC/GSTIN verification & tiered volume pricing slabs',
+      'Multi-factor hyperlocal ranking & native ad delivery engine with freshness decay',
+      'OWASP MASVS Level 2 hardening, input sanitization, Hermes AOT & Super Admin moderation',
+    ],
+    accent: '#2563eb',
+    accent2: '#06b6d4',
+    tags: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'PostGIS'],
   },
 ]
 
@@ -279,74 +301,109 @@ function ProjectCard({ project, index, isDark }) {
         className="flex flex-col sm:flex-row items-center justify-between px-7 py-5 gap-4"
         style={{ borderTop: `1px solid ${dividerColor}` }}
       >
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 font-bebas tracking-widest text-lg px-6 py-2.5 rounded-lg transition-all duration-300 w-full sm:w-auto justify-center"
-          style={{
-            background: githubBg,
-            border: `1px solid ${githubBorder}`,
-            color: githubColor,
-          }}
-          onMouseEnter={(e) => {
-            if (B) {
-              e.currentTarget.style.background = hovered ? 'rgba(255,255,255,0.22)' : 'rgba(37,99,235,0.07)'
-              e.currentTarget.style.borderColor = hovered ? 'rgba(255,255,255,0.5)' : '#2563eb'
-              e.currentTarget.style.color = hovered ? '#ffffff' : '#2563eb'
-            } else {
-              e.currentTarget.style.borderColor = project.accent
-              e.currentTarget.style.color = '#fff'
-              e.currentTarget.style.background = 'rgba(79,139,255,0.1)'
-            }
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = githubBg
-            e.currentTarget.style.borderColor = githubBorder
-            e.currentTarget.style.color = githubColor
-          }}
-        >
-          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-          </svg>
-          GITHUB
-        </a>
+        {project.github ? (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 font-bebas tracking-widest text-lg px-6 py-2.5 rounded-lg transition-all duration-300 w-full sm:w-auto justify-center"
+            style={{
+              background: githubBg,
+              border: `1px solid ${githubBorder}`,
+              color: githubColor,
+            }}
+            onMouseEnter={(e) => {
+              if (B) {
+                e.currentTarget.style.background = hovered ? 'rgba(255,255,255,0.22)' : 'rgba(37,99,235,0.07)'
+                e.currentTarget.style.borderColor = hovered ? 'rgba(255,255,255,0.5)' : '#2563eb'
+                e.currentTarget.style.color = hovered ? '#ffffff' : '#2563eb'
+              } else {
+                e.currentTarget.style.borderColor = project.accent
+                e.currentTarget.style.color = '#fff'
+                e.currentTarget.style.background = 'rgba(79,139,255,0.1)'
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = githubBg
+              e.currentTarget.style.borderColor = githubBorder
+              e.currentTarget.style.color = githubColor
+            }}
+          >
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+            GITHUB
+          </a>
+        ) : (
+          <span
+            className="flex items-center gap-2 font-bebas tracking-widest text-lg px-6 py-2.5 rounded-lg transition-all duration-300 w-full sm:w-auto justify-center"
+            style={{
+              background: githubBg,
+              border: `1px solid ${githubBorder}`,
+              color: githubColor,
+            }}
+          >
+            <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0110 0v4" />
+            </svg>
+            PRIVATE CLIENT REPO
+          </span>
+        )}
 
-        <a
-          href={project.live}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 font-bebas tracking-widest text-lg px-8 py-2.5 rounded-lg text-white w-full sm:w-auto justify-center"
-          style={{
-            background: B && hovered
-              ? 'rgba(255,255,255,0.22)'
-              : `linear-gradient(135deg, ${project.accent}, ${project.accent2})`,
-            border: B && hovered ? '1px solid rgba(255,255,255,0.4)' : 'none',
-            boxShadow: B && hovered
-              ? '0 4px 15px rgba(255,255,255,0.2)'
-              : `0 4px 15px ${project.accent}30`,
-            transition: 'all 0.3s',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-2px)'
-            e.currentTarget.style.boxShadow = B && hovered
-              ? '0 8px 25px rgba(255,255,255,0.3)'
-              : `0 8px 25px ${project.accent}50`
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'none'
-            e.currentTarget.style.boxShadow = B && hovered
-              ? '0 4px 15px rgba(255,255,255,0.2)'
-              : `0 4px 15px ${project.accent}30`
-          }}
-        >
-          LIVE DEMO
-          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-            <polyline points="15 3 21 3 21 9" />
-            <line x1="10" y1="14" x2="21" y2="3" />
-          </svg>
-        </a>
+        {project.live ? (
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 font-bebas tracking-widest text-lg px-8 py-2.5 rounded-lg text-white w-full sm:w-auto justify-center"
+            style={{
+              background: B && hovered
+                ? 'rgba(255,255,255,0.22)'
+                : `linear-gradient(135deg, ${project.accent}, ${project.accent2})`,
+              border: B && hovered ? '1px solid rgba(255,255,255,0.4)' : 'none',
+              boxShadow: B && hovered
+                ? '0 4px 15px rgba(255,255,255,0.2)'
+                : `0 4px 15px ${project.accent}30`,
+              transition: 'all 0.3s',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)'
+              e.currentTarget.style.boxShadow = B && hovered
+                ? '0 8px 25px rgba(255,255,255,0.3)'
+                : `0 8px 25px ${project.accent}50`
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'none'
+              e.currentTarget.style.boxShadow = B && hovered
+                ? '0 4px 15px rgba(255,255,255,0.2)'
+                : `0 4px 15px ${project.accent}30`
+            }}
+          >
+            {project.liveLabel || 'LIVE DEMO'}
+            <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        ) : (
+          <span
+            className="flex items-center gap-2 font-bebas tracking-widest text-lg px-8 py-2.5 rounded-lg text-white w-full sm:w-auto justify-center"
+            style={{
+              background: B && hovered
+                ? 'rgba(255,255,255,0.22)'
+                : `linear-gradient(135deg, ${project.accent}, ${project.accent2})`,
+              border: B && hovered ? '1px solid rgba(255,255,255,0.4)' : 'none',
+              boxShadow: B && hovered
+                ? '0 4px 15px rgba(255,255,255,0.2)'
+                : `0 4px 15px ${project.accent}30`,
+              transition: 'all 0.3s',
+            }}
+          >
+            MOBILE APP • ANDROID & iOS
+          </span>
+        )}
       </div>
 
       {/* Highlights toggle */}
@@ -413,7 +470,7 @@ function ProjectCard({ project, index, isDark }) {
 
 export default function Projects({ isDark }) {
   const [activeTab, setActiveTab] = useState('Frontend')
-  const tabs = ['Frontend', 'Backend', 'Fullstack', 'AI Engineer']
+  const tabs = ['Frontend', 'Backend', 'Fullstack', 'AI Engineer', 'Freelance']
 
   const filteredProjects = projects.filter(p => p.category === activeTab)
 
@@ -473,7 +530,7 @@ export default function Projects({ isDark }) {
         <div className="flex flex-col gap-6">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project, i) => (
-              <ProjectCard key={project.number} project={project} index={i} isDark={isDark} />
+              <ProjectCard key={`${project.category}-${project.number}`} project={project} index={i} isDark={isDark} />
             ))
           ) : (
             <div
