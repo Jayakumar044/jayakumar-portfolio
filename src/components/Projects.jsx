@@ -6,6 +6,7 @@ import ProposalImg from '../assets/images/Proposal.png'
 import LibraryBackendImg from '../assets/images/library_backend.png'
 import SkywayAIImg from '../assets/images/Skyway_AI.png'
 import SellooImg from '../assets/images/selloo.png'
+import NammaKarthikeyanImg from '../assets/images/nammakarthikeyan.png'
 
 const projects = [
   {
@@ -133,6 +134,27 @@ const projects = [
     accent: '#2563eb',
     accent2: '#06b6d4',
     tags: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'PostGIS'],
+  },
+  {
+    number: '01',
+    category: 'Company',
+    title: 'Namma Karthikeyan — Civic Portal',
+    tagline: 'Bilingual Civic Complaint & Grievance Redressal Portal for Trichy',
+    description:
+      'A production-ready Next.js 14 full-stack civic grievance portal built for Tiruchirappalli (65 wards). Citizens submit complaints with verified photo uploads and track real-time resolution status in Tamil & English, while staff manage assignments, analytics, and CSV exports from an Admin Panel.',
+    image: NammaKarthikeyanImg,
+    githubLabel: 'PRIVATE COMPANY REPO',
+    live: 'https://nammakarthikeyan.com/',
+    highlights: [
+      'Bilingual Tamil & English civic portal covering 65 Trichy wards with live status tracking',
+      'Full-stack Next.js 14 App Router with Prisma ORM, Zod validation & PostgreSQL/SQLite',
+      'Secure photo upload pipeline with file-signature checks, rate limiting & bot honeypot',
+      'Role-based Admin Dashboard with analytics, 14-day trends, ward filters & CSV export',
+      'JWT httpOnly sessions (jose), bcryptjs hashing, middleware route guards & SEO JSON-LD',
+    ],
+    accent: '#2563eb',
+    accent2: '#10b981',
+    tags: ['Next.js 14', 'TypeScript', 'Prisma', 'Tailwind CSS', 'Zod'],
   },
 ]
 
@@ -347,7 +369,7 @@ function ProjectCard({ project, index, isDark }) {
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
               <path d="M7 11V7a5 5 0 0110 0v4" />
             </svg>
-            PRIVATE CLIENT REPO
+            {project.githubLabel || 'PRIVATE CLIENT REPO'}
           </span>
         )}
 
@@ -470,7 +492,7 @@ function ProjectCard({ project, index, isDark }) {
 
 export default function Projects({ isDark }) {
   const [activeTab, setActiveTab] = useState('Frontend')
-  const tabs = ['Frontend', 'Backend', 'Fullstack', 'AI Engineer', 'Freelance']
+  const tabs = ['Frontend', 'Backend', 'Fullstack', 'AI Engineer', 'Freelance', 'Company']
 
   const filteredProjects = projects.filter(p => p.category === activeTab)
 
