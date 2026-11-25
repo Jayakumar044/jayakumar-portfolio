@@ -7,6 +7,7 @@ import LibraryBackendImg from '../assets/images/library_backend.png'
 import SkywayAIImg from '../assets/images/Skyway_AI.png'
 import SellooImg from '../assets/images/selloo.png'
 import NammaKarthikeyanImg from '../assets/images/nammakarthikeyan.png'
+import ClyyoraImg from '../assets/images/clyyora.jpg'
 
 const projects = [
   {
@@ -134,6 +135,27 @@ const projects = [
     accent: '#2563eb',
     accent2: '#06b6d4',
     tags: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'PostGIS'],
+  },
+  {
+    number: '02',
+    category: 'Freelance',
+    title: 'CLYYORA — Digital Studio',
+    tagline: 'Digital Experiences, Built Better — Freelance Studio Web Platform',
+    description:
+      'A high-performance React 19 + Vite SSR and prerendered digital studio platform built for CLYYORA (clyyora.in). Engineered with foundation-first technical SEO, automated XML sitemap generation, JSON-LD structured data, and dynamic case-study pages.',
+    image: ClyyoraImg,
+    github: 'https://github.com/Jayakumar044/Clyyora',
+    live: 'https://clyyora.in/',
+    highlights: [
+      'Static SSR prerendering pipeline (Vite SSR + custom prerender & sitemap scripts)',
+      'Full technical SEO with react-helmet-async, Open Graph, Twitter cards & JSON-LD',
+      'Dynamic case-study & portfolio architecture driven by centralized data models',
+      'Multi-route SPA with React Router v7, service pages, insights & contact flows',
+      'Production Vercel redirects/rewrites & fast static first-paint optimization',
+    ],
+    accent: '#a855f7',
+    accent2: '#4f8bff',
+    tags: ['React 19', 'Vite', 'React Router', 'Tailwind CSS', 'SSR / SEO'],
   },
   {
     number: '01',
