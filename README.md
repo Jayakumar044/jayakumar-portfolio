@@ -53,7 +53,7 @@ A responsive personal portfolio website built with React, Vite, and Tailwind CSS
 ```
 portfolio/
 ├── public/
-│   ├── assets/resume/Jayakumar_Frontend_Developer.pdf
+│   ├── assets/resume/Jayakumar_Fullstack_Developer_MWT.pdf
 │   └── favicon.svg
 ├── src/
 │   ├── assets/

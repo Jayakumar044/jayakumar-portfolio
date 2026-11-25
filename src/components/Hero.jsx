@@ -159,7 +159,7 @@ export default function Hero({ isDark }) {
             <span className="relative z-10">HIRE ME NOW</span>
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </a>
-          <a href="/assets/resume/Jayakumar_Frontend_Developer.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost font-bebas tracking-widest text-lg px-8 py-4 w-full sm:w-auto">
+          <a href="/assets/resume/Jayakumar_Fullstack_Developer_MWT.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost font-bebas tracking-widest text-lg px-8 py-4 w-full sm:w-auto">
             VIEW RESUME
           </a>
           <a
